@@ -69,7 +69,7 @@ MyUploadAdapter.prototype.upload = function () {
         (file) =>
             new Promise((resolve, reject) => {
                 if (typeof this.config.imageUpload === 'function') {
-                    this.config.imageUpload(file).subscribe(res => {
+                    this.config.imageUpload(file).then(res => {
                         resolve({
                             default: res.url,
                         });
